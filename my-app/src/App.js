@@ -1,36 +1,31 @@
-import React from 'react';
-import { useState } from 'react';
+// import React from 'react';
+import React, { useState } from 'react';
 import uuid from 'react-uuid';
 
 function App() {
-  let [name, setName] = useState(false);
-  let [name1, setName1] = useState(false);
-  let [name2, setName2] = useState(false);
+  let [age, setAge] = useState('');
+
   return (
     <>
+      <select
+        value={age}
+        onChange={(event) => {
+          setAge(event.target.value);
+        }}
+      >
+        <option>text1</option>
+        <option>text2</option>
+        <option>text3</option>
+      </select>
+
+      {age}
       <input
-        type="checkbox"
-        onChange={() => {
-          setName(!name);
+        placeholder="hohoh"
+        onChange={(eve) => {
+          setAge(eve.target.value);
         }}
       />
-      <input
-        type="checkbox"
-        onChange={() => {
-          setName1(!name1);
-        }}
-      />
-      <input
-        type="checkbox"
-        onChange={() => {
-          setName2(!name2);
-        }}
-      />
-      <p>
-        {name ? 'html' : ''} 
-        {name1 ? 'js' : ''} 
-        {name2 ? 'css' : ''}
-      </p>
+      <p>{age}</p>
     </>
   );
 }
