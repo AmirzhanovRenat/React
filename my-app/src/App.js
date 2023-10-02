@@ -1,31 +1,26 @@
-// import React from 'react';
 import React, { useState } from 'react';
 import uuid from 'react-uuid';
 
 function App() {
-  let [age, setAge] = useState('');
+  const texts = ['text1', 'text2', 'text3', 'text4'];
+  const [value, setValue] = useState('');
+
+  let options = texts.map((text, index) => {
+    return <option key={index}>{text}</option>;
+  });
 
   return (
     <>
       <select
-        value={age}
+        value={value}
         onChange={(event) => {
-          setAge(event.target.value);
+          setValue(event.target.value);
         }}
       >
-        <option>text1</option>
-        <option>text2</option>
-        <option>text3</option>
+        {options}
       </select>
 
-      {age}
-      <input
-        placeholder="hohoh"
-        onChange={(eve) => {
-          setAge(eve.target.value);
-        }}
-      />
-      <p>{age}</p>
+      <p>out:{value}</p>
     </>
   );
 }
