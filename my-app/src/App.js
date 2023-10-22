@@ -36,6 +36,7 @@ function App() {
   //     })
   //   );
   // }
+  // dasd
   function func(id) {
     setNotes((par) => par.filter((el) => el.id !== id));
   }
